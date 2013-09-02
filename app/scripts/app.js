@@ -11,6 +11,10 @@ angular.module('superZapatoGapApp', [])
         templateUrl: 'views/shoppingCart.html',
         controller: 'ShoppingcartCtrl'
       })
+      .when('/productos', {
+        templateUrl: 'views/productos.html',
+        controller: 'ProductosCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -6,9 +6,7 @@ angular.module('superZapatoGapApp')
         adapters: ['dom'],
         name: 'superZapatoObjects',
         record: 'superZapatoObject'
-      }, function (e) {
-        console.info('localStorageService: storage ready');
-      }),
+      }, function (e) {}),
 
       offlineManager = {
         salvar: function (object) {

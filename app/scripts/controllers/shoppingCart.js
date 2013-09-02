@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('superZapatoGapApp')
-  .controller('ShoppingcartCtrl',['$scope','localStorageService', function ($scope,localStorageService) {
+  .controller('ShoppingcartCtrl',['$scope','shoppingCartService', function ($scope,shoppingCartService) {
 
     $scope.items = [
       {title: 'Paint pots', quantity: 8, price: 3.95},

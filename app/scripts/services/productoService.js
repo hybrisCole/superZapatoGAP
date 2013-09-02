@@ -29,6 +29,7 @@ angular.module('superZapatoGapApp')
       listado: function(){
         var defer = $q.defer();
         localStorageService.buscar(productosKey).then(function(productos){
+          productos.data = productos.data || {};
           defer.resolve(productos.data);
         });
         return defer.promise;

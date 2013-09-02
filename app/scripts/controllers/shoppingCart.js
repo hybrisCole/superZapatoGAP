@@ -1,17 +1,12 @@
 'use strict';
 
 angular.module('superZapatoGapApp')
-  .controller('ShoppingcartCtrl',['$scope','shoppingCartService', function ($scope,shoppingCartService) {
-
-    $scope.items = [
-      {title: 'Paint pots', quantity: 8, price: 3.95},
-      {title: 'Polka dots', quantity: 17, price: 12.95},
-      {title: 'Pebbles', quantity: 5, price: 6.95},
-      {title: 'Polka dots', quantity: 10, price: 12.95},
-      {title: 'Paint pots', quantity: 18, price: 3.95},
-      {title: 'Polka dots', quantity: 10, price: 12.95},
-      {title: 'Pebbles', quantity: 50, price: 6.95}
-    ];
+  .controller('ShoppingcartCtrl',['$scope','productoService', function ($scope,productoService) {
+    productoService.listado().then(function(productos){
+      console.log(productos);
+      $scope.items = productos;
+    })
+    
 
     $scope.cart_items = [
       {title: 'Paint pots', quantity: 3, price: 3.95},

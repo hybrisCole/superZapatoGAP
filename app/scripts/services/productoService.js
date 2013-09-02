@@ -2,7 +2,7 @@
 
 angular.module('superZapatoGapApp')
   .factory('productoService',['localStorageService','$q', function (localStorageService,$q) {
-    var productosKey = 'PRODUCTOS',
+    var productosKey = 'superZapatoObjects.PRODUCTOS',
     uuid = function () {
       return s4() + s4() + '-' + s4() + '-' + s4() + '-' + s4() + '-' + s4() + s4() + s4();
     },
@@ -19,8 +19,9 @@ angular.module('superZapatoGapApp')
             productos = {key:productosKey,data:[]};
           }
           productos.data.push(producto);
-          localStorageService.salvar(productos).then(function(){
-            defer.resolve(producto);
+          productos.key = productosKey;
+          localStorageService.salvar(productos).then(function(productoRespuesta){
+            defer.resolve(productoRespuesta);
           });
         });
         return defer.promise;

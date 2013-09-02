@@ -3,9 +3,7 @@
 angular.module('superZapatoGapApp')
   .factory('localStorageService', ['$q',function($q) {
     var lawnChairStore = Lawnchair({
-        adapters: ['dom'],
-        name: 'superZapatoObjects',
-        record: 'superZapatoObject'
+        adapters: ['dom']
       }, function (e) {}),
 
       offlineManager = {

@@ -1,0 +1,14 @@
+.btn-primary{
+	color: whitesmoke !important;
+	background: teal;
+	border: none;
+	&:hover {
+		background: darkred;
+	}
+	
+}
+
+.modal-footer .btn {width: 88%;}
+.thumbnail{margin-bottom: 20px;}
+
+.centered-text{text-align: center;}

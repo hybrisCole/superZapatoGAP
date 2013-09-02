@@ -3,7 +3,7 @@
 angular.module('superZapatoGapApp')
   .factory('localStorageService', ['$q',function($q) {
     var lawnChairStore = Lawnchair({
-        adapter: ['indexed-db','dom'],
+        adapters: ['dom'],
         name: 'superZapatoObjects',
         record: 'superZapatoObject'
       }, function (e) {

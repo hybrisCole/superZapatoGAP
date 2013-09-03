@@ -10,7 +10,7 @@
   <li class="search_form ">
     <form id="custom-search-form" class="form-search form-horizontal ">
         <div class="input-append ">
-            <input type="text" class="search-query" placeholder="Search">
+            <input type="text" class="search-query" placeholder="Search" ng-model="searchText">
             <button type="submit" class="btn"><i class="icon-search"></i></button>
         </div>
     </form>
@@ -18,10 +18,10 @@
 </ul>
   
 <ul id="thumbnails centered-text">
-  <li ng-repeat='item in items' class="span3">
+  <li ng-repeat='item in items | filter:searchText' class="span3">
     <div class="thumbnail" style="padding: 0">
       <div style="padding:4px">
-        <img alt="300x200" style="width: 100%" src="http://placehold.it/200x150">
+        <a href="javascript:void" ng-click="openModalEliminarRopa(ropa)"> <img alt="300x200" style="width: 100%" src="http://placehold.it/200x150"></a>
       </div>
       <div class="caption">
         <h2>{{item.nombre}}</h2>
@@ -30,14 +30,14 @@
         
       </div>
       <div class="modal-footer" style="text-align: left">
-        <a href="http://bootsnipp.com/" class="btn btn-primary" ng-click="addToCart(item)">Add to Cart</a>
+        <a href="javascript:void" class="btn btn-primary" ng-click="addToCart(item)">Add to Cart</a>
       </div>
     </div>
   </li>
 </ul>
 
 
- <!-- <div class="mycart">
+ <div class="mycart">
   <ul class="icons-nav border-bottom">
     <li><h2>My Cart</h2></li>
     <li class="pull-right">
@@ -67,7 +67,7 @@
     </li>
   </ul>
   <h3>Total: <span class="orange">{{cartTotal() | currency}}</span></h3>
-</div>  -->
+</div> 
 
 
 

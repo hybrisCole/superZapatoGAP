@@ -1,73 +1,89 @@
 
 <h1>Super Zapato</h1>
-<ul class="icons-nav">
-  <li>
-    <ul class="cart">
-      <li class="icon products-icon"></li>
-      <li class="ammount products-ammount">{{items.length;}}</li>
+
+<div class="row">
+  <div class="span4">
+    <ul class="icons-nav span4">
+      <li>
+        <ul class="cart">
+          <li class="icon products-icon"></li>
+          <li class="ammount products-ammount">{{items.length;}}</li>
+        </ul>
+      </li>
     </ul>
-  </li>
-  <li class="search_form ">
+  </div>
+  <div class="search_form span4">
     <form id="custom-search-form" class="form-search form-horizontal ">
         <div class="input-append ">
             <input type="text" class="search-query" placeholder="Search" ng-model="searchText">
             <button type="submit" class="btn"><i class="icon-search"></i></button>
         </div>
     </form>
-  </li>
-</ul>
+  </div>
+  <div class="row">
+     <div class="mycart pull-right span4">
+      <ul class="icons-nav">
+        <li><h2>Mi Carrito</h2></li>
+        <li class="pull-right">
+          <a href="javascritp:avoid">
+            <ul class="cart">
+              <li class="icon cart-icon"></li>
+              <li class="ammount cart-ammount">{{cart_items.length;}}</li>
+            </ul>
+          </a>
+        </li>
+      </ul>
+      <div class="border-top hidden">
+        <ul id="cart-list border-top">
+          <li ng-repeat='cart_item in cart_items'>
+            <ul class="in-line">
+              <li class="pd_cart_name">
+                <button ng-click="removeFromCart($index)" class="button btn-delete"></button>
+                <span>{{cart_item.title}}</span></li>
+              <li class="pd_cart_qty">
+                {{cart_item.quantity}}
+              </li>
+              <li>
+                <span>{{cart_item.price | currency}}</span>
+              </li>
+              <li>
+                <span>{{cart_item.price * cart_item.quantity | currency}}</span>
+
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <h3 class="border-top">Total: <span class="orange">{{cartTotal() | currency}}</span></h3>
+      </div>
+    </div> 
+  </div>
   
-<ul id="thumbnails centered-text">
-  <li ng-repeat='item in items | filter:searchText' class="span3">
-    <div class="thumbnail" style="padding: 0">
-      <div style="padding:4px">
-        <a href="javascript:void" ng-click="openModalEliminarRopa(ropa)"> <img alt="300x200" style="width: 100%" src={{item.imagenPrincipal}}></a>
+</div>
+<div class="span12">
+  <ul id="thumbnails" class="">
+    <li ng-repeat='item in items | filter:searchText' class="span3">
+      <div class="thumbnail" style="padding: 0">
+        <div style="padding:4px">
+          <a href="javascript:void" ng-click="openModalEliminarRopa(ropa)"> <img alt="300x200" style="width: 100%" src={{item.imagenPrincipal}}></a>
+        </div>
+        <div class="caption">
+          <h2>{{item.nombre}}</h2>
+          <h3>{{item.precio | currency}}</h3>
+          <p>{{item.descripcion}}</p>
+          
+        </div>
+        <div class="modal-footer" style="text-align: left">
+          <a href="javascript:void" class="btn btn-primary" ng-click="addToCart(item)">Add to Cart</a>
+        </div>
       </div>
-      <div class="caption">
-        <h2>{{item.nombre}}</h2>
-        <h3>{{item.precio | currency}}</h3>
-        <p>{{item.descripcion}}</p>
-        
-      </div>
-      <div class="modal-footer" style="text-align: left">
-        <a href="javascript:void" class="btn btn-primary" ng-click="addToCart(item)">Add to Cart</a>
-      </div>
-    </div>
-  </li>
-</ul>
-
-
- <div class="mycart">
-  <ul class="icons-nav border-bottom">
-    <li><h2>My Cart</h2></li>
-    <li class="pull-right">
-      <ul class="cart">
-        <li class="icon cart-icon"></li>
-        <li class="ammount cart-ammount">{{cart_items.length;}}</li>
-      </ul>
     </li>
   </ul>
-  <ul id="cart-list">
-    <li ng-repeat='cart_item in cart_items'>
-      <ul class="in-line">
-        <li class="pd_cart_name">
-          <button ng-click="removeFromCart($index)" class="button btn-delete"></button>
-          <span>{{cart_item.title}}</span></li>
-        <li class="pd_cart_qty">
-          {{cart_item.quantity}}
-        </li>
-        <li>
-          <span>{{cart_item.price | currency}}</span>
-        </li>
-        <li>
-          <span>{{cart_item.price * cart_item.quantity | currency}}</span>
+  
+</div>  
 
-        </li>
-      </ul>
-    </li>
-  </ul>
-  <h3>Total: <span class="orange">{{cartTotal() | currency}}</span></h3>
-</div> 
+
+
+ 
 
 
 

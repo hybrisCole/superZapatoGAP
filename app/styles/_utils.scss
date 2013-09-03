@@ -1,3 +1,7 @@
+.span12{
+	margin-left: 0;
+}
+
 .btn-primary{
 	color: whitesmoke !important;
 	background: teal;
@@ -16,7 +20,17 @@
 }
 
 .modal-footer .btn {width: 88%;}
+#thumbnails{
+	li{
+			padding-right: 15px;
+			padding-left: 0px;
+			margin-left: 0 !important;
+		
+	}
+
+}
 .thumbnail{
+	
 	margin-bottom: 20px;
 	h2 {
 	    margin: 0 0 5px;
@@ -43,6 +57,16 @@
 		min-height: 120px;
 		height: auto;
 	}
+	img{
+
+		-webkit-box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		box-sizing: border-box;
+
+		border: 1px dashed rgba(0,0,0,0.1);
+	}
+
 }
+
 
 .centered-text{text-align: center;}

@@ -69,8 +69,8 @@ a:link, a:visited {
     }
 }
 
-.border-bottom {
-    border-bottom: 1px dashed rgba(0,0,0,0.2);
+.border-top {
+    border-top: 1px dashed rgba(0,0,0,0.2);
 }
 
 .button {
@@ -104,35 +104,6 @@ a:link, a:visited {
     color: lightseagreen;
 }
 
-#cart-list {
-	> li {
-	    font-size: 12px;
-	    border-bottom: 1px solid rgba(0,0,0,0.1);
-	    -webkit-box-sizing: border-box;
-	    -moz-box-sizing: border-box;
-	    box-sizing: border-box;
-
-	}
-	.btn-delete:before {
-	    position: static;
-	    font-size: 10px;
-	    margin: 0;
-	}
-	.in-line > li {
-	    padding: 0;
-	    width: 40px;
-	}
-}
-
-
-.cart {
-    position: relative;
-    list-style: none;
-    height: 33px;
-    overflow: hidden;
-    width: 50px;
-}
-
 .cart-ammount {
     background: violet;
 }
@@ -151,31 +122,11 @@ a:link, a:visited {
 .icons-nav {
     overflow: hidden;
     width: 100%;
- /*text-align: right;*/
-    margin: 10px 0;
+    margin:0;
 }
 
 .icons-nav > li {
     display: inline-block;
-}
-
-.mycart {
-    -ms-overflow-y: auto;
-    overflow-y: auto;
-    width: 230px;
-    position: absolute;
-    top: 260px;
-    right: 30px;
-    border-radius: 5px;
-    border: 1px solid rgba(0,0,0,0.2);
-    padding: 0 20px;
-}
-
-.orange {
-    color: orange;
-    font-size: 24px;
-    font-weight: bold;
-    float: right;
 }
 
 .products-ammount {
@@ -236,4 +187,7 @@ a:link, a:visited {
 
 .remove {
     width: 30px !important;
+}
+.hidden{
+	display: none;
 }

@@ -1,0 +1,55 @@
+.mycart {
+    -ms-overflow-y: auto;
+    overflow-y: auto;
+    right: 30px;
+    border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.2);
+    background: rgba(255,255,255,0.9);
+    padding: 0 20px;
+    margin:0 0 20px;
+    h2{
+    	font-size: 18px;
+    	line-height: 1;
+		margin: 10px 0;
+    }
+    h3{
+    	font-size: 16px;
+    	margin: 0;
+    }
+}
+
+#cart-list {
+	> li {
+	    font-size: 12px;
+	    border-bottom: 1px solid rgba(0,0,0,0.1);
+	    -webkit-box-sizing: border-box;
+	    -moz-box-sizing: border-box;
+	    box-sizing: border-box;
+
+	}
+	.btn-delete:before {
+	    position: static;
+	    font-size: 10px;
+	    margin: 0;
+	}
+	.in-line > li {
+	    padding: 0;
+	    width: 40px;
+	}
+}
+
+
+.cart {
+    position: relative;
+    list-style: none;
+    height: 33px;
+    overflow: hidden;
+    width: 50px;
+}
+
+.orange {
+    color: orange;
+    font-size: 16px;
+    font-weight: bold;
+    float: right;
+}

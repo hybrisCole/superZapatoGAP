@@ -3,9 +3,16 @@
 	background: teal;
 	border: none;
 	&:hover {
-		background: darkred;
-	}
-	
+		background: #2f96b4;
+	}	
+}
+
+.btn-info{
+	background: #5bc0de;
+	border: none;
+	&:hover {
+		background: #2f96b4;
+	}	
 }
 
 .modal-footer .btn {width: 88%;}

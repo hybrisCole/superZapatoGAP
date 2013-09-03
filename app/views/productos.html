@@ -1,28 +1,28 @@
-<form name="frmProducto" ng-submit="guardarProducto()" class="form-horizontal" action='' method="POST">
+<form name="frmProducto" id="frmProducto" ng-submit="guardarProducto()" class="form-horizontal span4" action='' method="POST">
   <fieldset>
     <div id="legend">
       <legend class="">Productos</legend>
     </div>
     <div class="control-group">
       <!-- Nombre -->
-      <label class="control-label"  for="nombre">Nombre</label>
+      <label class="control-label"  for="nombre">Nombre *</label>
       <div class="controls">
-        <input ng-model="producto.nombre" type="text" id="nombre" name="nombre" placeholder="" class="input-xlarge" required />
+        <input ng-model="producto.nombre" type="text" id="nombre" name="nombre" placeholder="Nombre del Producto" class="input-xlarge" required />
         <p class="text-error" ng-show="frmProducto.nombre.$error.required">Nombre es requerido</p>
       </div>
     </div>
     <div class="control-group">
       <!-- Descripcion -->
-      <label class="control-label"  for="descripcion">Descripcion</label>
+      <label class="control-label"  for="descripcion">Descripcion *</label>
       <div class="controls">
-        <input ng-model="producto.descripcion" type="text" id="descripcion" name="descripcion" placeholder="" class="input-xlarge" required />
+        <input ng-model="producto.descripcion" type="text" id="descripcion" name="descripcion" placeholder="Descripcion" class="input-xlarge" required />
         <p class="text-error" ng-show="frmProducto.descripcion.$error.required">Descripcion es requerido</p>
       </div>
     </div>
 
     <div class="control-group">
       <!-- Precio -->
-      <label class="control-label" for="precio">Precio</label>
+      <label class="control-label" for="precio">Precio *</label>
       <div class="controls">
         <input type="number" ng-model="producto.precio" min="1" max="999999" id="precio" name="precio" placeholder="Precio" class="input-xlarge" required />
         <p class="text-error" ng-show="frmProducto.precio.$error.required">Precio es requerido</p>
@@ -31,7 +31,7 @@
 
     <div class="control-group">
       <!-- Cantidad en Estante -->
-      <label class="control-label" for="cantidadEstante">Cantidad en Estante</label>
+      <label class="control-label" for="cantidadEstante">Cantidad en Estante *</label>
       <div class="controls">
         <input type="number" ng-model="producto.cantidadEstante" min="1" max="999999" id="cantidadEstante" name="cantidadEstante" placeholder="Cantidad Estante" class="input-xlarge" required />
         <p class="text-error" ng-show="frmProducto.cantidadEstante.$error.required">Cantidad Estante es requerido</p>
@@ -40,7 +40,7 @@
 
     <div class="control-group">
       <!-- Cantidad en Inventario -->
-      <label class="control-label" for="cantidadInventario">Cantidad en Inventario</label>
+      <label class="control-label" for="cantidadInventario">Cantidad en Inventario *</label>
       <div class="controls">
         <input type="number" ng-model="producto.cantidadInventario" min="1" max="999999" id="cantidadInventario" name="cantidadInventario" placeholder="Cantidad Inventario" class="input-xlarge" required />
         <p class="text-error" ng-show="frmProducto.cantidadInventario.$error.required">Cantidad Inventario es requerido</p>
@@ -48,19 +48,20 @@
     </div>
     <div class="control-group">
       <!-- Imagen Principal -->
-      <label class="control-label" for="imagenPrincipal">Imagen Principal</label>
+      <label class="control-label" for="imagenPrincipal">Imagen Principal *</label>
       <div class="controls">
-        <input ng-model="producto.imagenPrincipal" type="text" id="imagenPrincipal" name="imagenPrincipal" placeholder="" class="input-xlarge" required />
+        <input ng-model="producto.imagenPrincipal" type="text" id="imagenPrincipal" name="imagenPrincipal" placeholder="http://" class="input-xlarge" required />
         <p class="text-error" ng-show="frmProducto.imagenPrincipal.$error.required">Imagen Principal es Requerida</p>
       </div>
     </div>
     <div class="control-group" ng-repeat="imagenSlide in producto.imagenesSlide">
       <!-- Imagenes de Slide -->
-      <label class="control-label" for="imagenPrincipal">Imagen De Slide</label>
+      <label class="control-label" for="imagenPrincipal">Imagen De Slide *</label>
       <div class="controls">
-        <input ng-model="imagenSlide.path" type="text" placeholder="" class="input-xlarge" required /><button ng-show="imagenSlide.ultimo" ng-click="agregarSlide()" class="btn btn-info" type="button">+</button>
+        <input ng-model="imagenSlide.path" type="text" placeholder="http://" class="input-xlarge" id="img_slider" required /><button ng-show="imagenSlide.ultimo" ng-click="agregarSlide()" class="btn btn-info" type="button">+</button>
       </div>
     </div>
+    <div><p class="small">* Campo requerido</p></div>
     <div class="control-group">
       <div class="controls">
         <input type="submit" class="btn btn-primary" value="Guardar Producto" />

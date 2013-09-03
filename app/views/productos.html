@@ -47,6 +47,21 @@
       </div>
     </div>
     <div class="control-group">
+      <!-- Imagen Principal -->
+      <label class="control-label" for="imagenPrincipal">Imagen Principal</label>
+      <div class="controls">
+        <input ng-model="producto.imagenPrincipal" type="text" id="imagenPrincipal" name="imagenPrincipal" placeholder="" class="input-xlarge" required />
+        <p class="text-error" ng-show="frmProducto.imagenPrincipal.$error.required">Imagen Principal es Requerida</p>
+      </div>
+    </div>
+    <div class="control-group" ng-repeat="imagenSlide in producto.imagenesSlide">
+      <!-- Imagenes de Slide -->
+      <label class="control-label" for="imagenPrincipal">Imagen De Slide</label>
+      <div class="controls">
+        <input ng-model="imagenSlide.path" type="text" placeholder="" class="input-xlarge" required /><button ng-show="imagenSlide.ultimo" ng-click="agregarSlide()" class="btn btn-info" type="button">+</button>
+      </div>
+    </div>
+    <div class="control-group">
       <div class="controls">
         <input type="submit" class="btn btn-primary" value="Guardar Producto" />
         <p class="text-success" ng-show="productoGuardado">El Producto se ha guardado satisfactoriamente.</p>

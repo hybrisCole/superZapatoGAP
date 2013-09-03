@@ -1,0 +1,21 @@
+#frmProducto{
+	label{
+		text-align: left;
+	}
+	input[type=text], input[type=number]{
+		border: none;
+		border-bottom: 1px solid rgba(0,0,0,0.2);
+		background: transparent;
+		border-radius: 0;
+		box-shadow: none;
+		background: rgba(0,0,0,0.02);
+		margin-right: 10px;
+	}
+	.text-error{display: none;}
+	.small{
+		font-size: 11px;
+		color: red;
+		text-align: center;
+	}
+	#img_slider{ width: 78%;}
+}

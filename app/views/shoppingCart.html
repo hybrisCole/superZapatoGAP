@@ -1,4 +1,3 @@
-
 <h1>Super Zapato</h1>
 
 <div class="row">
@@ -25,7 +24,7 @@
       <ul class="icons-nav">
         <li><h2>Mi Carrito</h2></li>
         <li class="pull-right">
-          <a href="javascritp:avoid">
+          <a href="javascritp:void(0)">
             <ul class="cart">
               <li class="icon cart-icon"></li>
               <li class="ammount cart-ammount">{{cart_items.length;}}</li>
@@ -55,35 +54,43 @@
         </ul>
         <h3 class="border-top">Total: <span class="orange">{{cartTotal() | currency}}</span></h3>
       </div>
-    </div> 
+    </div>
   </div>
-  
+
 </div>
 <div class="span12">
   <ul id="thumbnails" class="">
     <li ng-repeat='item in items | filter:searchText' class="span3">
       <div class="thumbnail" style="padding: 0">
         <div style="padding:4px">
-          <a href="javascript:void" ng-click="openModalEliminarRopa(ropa)"> <img alt="300x200" style="width: 100%" src={{item.imagenPrincipal}}></a>
+          <a href="javascript:void(0)" ng-click="openModalEliminarRopa(ropa)"> <img alt="300x200" style="width: 100%" src={{item.imagenPrincipal}}></a>
         </div>
         <div class="caption">
           <h2>{{item.nombre}}</h2>
           <h3>{{item.precio | currency}}</h3>
           <p>{{item.descripcion}}</p>
-          
+
         </div>
         <div class="modal-footer" style="text-align: left">
-          <a href="javascript:void" class="btn btn-primary" ng-click="addToCart(item)">Add to Cart</a>
+          <button class="btn btn-primary" ng-click="addToCart(item)">Agregar al Carrito</button>
+          <button class="btn btn-primary" ng-click="openModalVerProducto(item)">Ver Informacion</button>
         </div>
       </div>
     </li>
   </ul>
-  
-</div>  
-
-
-
- 
-
-
-
+</div>
+<div modal="modalVerProducto" close="closeModalVerProducto()" options="modalOpts">
+  <div class="modal-header">
+    <h4>Informacion del Producto</h4>
+  </div>
+  <div class="modal-body">
+    <carousel interval="slideInterval">
+      <slide ng-repeat="slide in verProducto.imagenesSlide">
+        <img ng-src="{{slide.path}}" style="margin:auto;">
+      </slide>
+    </carousel>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-warning cancel" ng-click="closeModalVerProducto()">Cerrar</button>
+  </div>
+</div>

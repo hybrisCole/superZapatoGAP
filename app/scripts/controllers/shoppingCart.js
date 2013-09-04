@@ -57,4 +57,23 @@ angular.module('superZapatoGapApp')
       $scope.modalEliminarRopa = false;
     };
 
+    //Modal:
+    $scope.modalOpts = {
+      backdropFade: true,
+      dialogFade:true,
+      keyBoard:true
+    };
+    $scope.openModalVerProducto = function (item) {
+      $scope.verProducto = item;
+      $scope.modalVerProducto = true;
+    };
+
+    $scope.closeModalVerProducto = function () {
+      $scope.verProducto = {};
+      $scope.modalVerProducto = false;
+    };
+
+    //Slider
+    $scope.slideInterval = 5000;
+
   }]);

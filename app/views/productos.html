@@ -51,7 +51,7 @@
       <label class="control-label" for="imagenPrincipal">Imagen Principal *</label>
       <div class="controls">
         <input ng-model="producto.imagenPrincipal" type="text" id="imagenPrincipal" name="imagenPrincipal" placeholder="http://" class="input-xlarge" required />
-        <img alt="300x200" style="width: 100%" src={{producto.imagenPrincipal}}></a>
+        <img alt="300x200" style="width: 100%" ng-src={{producto.imagenPrincipal}}></a>
         <p class="text-error" ng-show="frmProducto.imagenPrincipal.$error.required">Imagen Principal es Requerida</p>
       </div>
     </div>
@@ -60,7 +60,7 @@
       <label class="control-label" for="imagenPrincipal">Imagen De Slide *</label>
       <div class="controls">
         <input ng-model="imagenSlide.path" type="text" placeholder="http://" class="input-xlarge" id="img_slider" required /><button ng-show="imagenSlide.ultimo" ng-click="agregarSlide()" class="btn btn-info" type="button">+</button>
-        <img alt="300x200" style="width: 100%" src={{imagenSlide.path}}></a>
+        <img alt="300x200" style="width: 100%" ng-src={{imagenSlide.path}}></a>
       </div>
     </div>
     <div><p class="small">* Campo requerido</p></div>

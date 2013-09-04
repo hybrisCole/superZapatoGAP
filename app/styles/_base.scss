@@ -1,7 +1,15 @@
+html, body {margin: 0;}
 html {
     font-family: 'Carrois Gothic SC', sans-serif;
 }
-
+footer{
+	line-height: 3;
+	text-align: center;
+	background: mediumAquamarine;
+	span.logo{
+		font-family: 'Kavoon', cursive;
+	}
+}
 input {
     width: 100%;
     border-radius: 3px;
@@ -42,6 +50,12 @@ h1{
 	margin-bottom: 20px;
 }
 
+.content{
+	overflow: hidden;
+}
+.row {
+	margin-left: 20px;
+}
 a:link, a:visited {
     color: rgba(0,70,0,0.7);
     font-weight: bold;
@@ -118,7 +132,16 @@ a:link, a:visited {
     height: 33px;
     overflow: hidden;
 }
+.hero-unit{
+	margin: 80px auto;
+	h1{
+		color: mintcream;
+		line-height: 1.5;
+		font-size: 50px;
+	}
+	p{margin: 10px 0;}
 
+}
 .icons-nav {
     overflow: hidden;
     width: 100%;

@@ -2,9 +2,9 @@
 
 angular.module('superZapatoGapApp')
   .controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
+    $scope.urls = [
+      '/soppingCart',
+      '/productos',
     ];
   });
+

@@ -132,7 +132,16 @@ a:link, a:visited {
     height: 33px;
     overflow: hidden;
 }
+.hero-unit{
+	margin: 80px auto;
+	h1{
+		color: mintcream;
+		line-height: 1.5;
+		font-size: 50px;
+	}
+	p{margin: 10px 0;}
 
+}
 .icons-nav {
     overflow: hidden;
     width: 100%;

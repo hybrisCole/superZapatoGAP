@@ -23,6 +23,7 @@ input:required:invalid, input:focus:invalid {
     color: red;
 }
 
+
 input:required:valid {
     color: limegreen;
 }
@@ -43,7 +44,7 @@ h1{
 	font-size: 66px;
 	line-height: 1.5;
 	color: mintcream;
-	background: darkred;
+	background: mediumseagreen;
 	padding: 0 20px;
 	text-align: center;
 	text-shadow: 0 0 15px rgba(0,0,0,0.5);
@@ -54,7 +55,7 @@ h1{
 	overflow: hidden;
 }
 .row {
-	margin-left: 20px;
+	margin-left: 4px;
 }
 a:link, a:visited {
     color: rgba(0,70,0,0.7);
@@ -108,9 +109,6 @@ a:link, a:visited {
 .btn-delete:before {
     content: "\2718";
     color: red;
-    position: absolute;
-    right: 0;
-    top: -2px;
 }
 
 .btn-add:before {
@@ -120,6 +118,7 @@ a:link, a:visited {
 
 .cart-ammount {
     background: violet;
+    font-weight: normal;
 }
 
 .cart-icon {
@@ -135,13 +134,15 @@ a:link, a:visited {
 .hero-unit{
 	margin: 80px auto;
 	h1{
-		color: mintcream;
+		color: lightgoldenrodyellow;
 		line-height: 1.5;
 		font-size: 50px;
+		background: lightcoral;
 	}
 	p{margin: 10px 0;}
 
 }
+.hidden{display: none;}
 .icons-nav {
     overflow: hidden;
     width: 100%;
@@ -151,7 +152,17 @@ a:link, a:visited {
 .icons-nav > li {
     display: inline-block;
 }
+.modal-footer .btn {width: 100% !important; }
+.modal-header {
+	overflow: hidden;
+	h4{ text-transform: uppercase; color:teal; font-size: 34px; float: left;}
+	> div{
+		margin: 0;
+		text-align: right;
+		strong{ color: grey;}
+	}
 
+}
 .products-ammount {
     background: lightseagreen;
 }
@@ -185,18 +196,6 @@ a:link, a:visited {
     background: rgba(20,125,160,0.15);
 }
 
-.pd_cart_name {
-    width: 110px !important;
-}
-
-.pd_cart_qty {
-    width: 20px !important;
-}
-
-.pull-right {
-    float: right;
-}
-
 .in-line li {
     position: relative;
     display: inline-block;
@@ -210,7 +209,4 @@ a:link, a:visited {
 
 .remove {
     width: 30px !important;
-}
-.hidden{
-	display: none;
 }

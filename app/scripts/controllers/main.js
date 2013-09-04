@@ -3,7 +3,7 @@
 angular.module('superZapatoGapApp')
   .controller('MainCtrl', function ($scope) {
     $scope.urls = [
-      '/soppingCart',
+      '/shoppingCart',
       '/productos',
     ];
   });

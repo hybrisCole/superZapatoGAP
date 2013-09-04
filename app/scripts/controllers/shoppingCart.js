@@ -32,7 +32,7 @@ angular.module('superZapatoGapApp')
     };
 
     $scope.addToCart = function(item) {
-      $scope.cart_items.push({title: item.nombre , quantity: 1 ,price: item.precio});
+      $scope.cart_items.push({title: item.nombre , quantity: item.quantity ,price: item.precio});
     };
 
     $scope.myfilter = function() {
@@ -50,12 +50,6 @@ angular.module('superZapatoGapApp')
       });
       return total;
     }
-    $scope.openModalEliminarRopa = function (ropa) {
-      console.log("lola");
-    };
-    $scope.closeModalEliminarRopa = function () {
-      $scope.modalEliminarRopa = false;
-    };
 
     //Modal:
     $scope.modalOpts = {
@@ -72,6 +66,15 @@ angular.module('superZapatoGapApp')
     $scope.closeModalVerProducto = function () {
       $scope.verProducto = {};
       $scope.modalVerProducto = false;
+    };
+
+    $scope.openModalVerCarrito = function () {
+      // $scope.verCarrito = item;
+      $scope.modalVerCarrito = true;
+    };
+    $scope.closeModalVerCarrito = function () {
+      $scope.verCarrito = {};
+      $scope.modalVerCarrito = false;
     };
 
     //Slider

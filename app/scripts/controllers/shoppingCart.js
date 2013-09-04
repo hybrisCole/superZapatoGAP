@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('superZapatoGapApp')
-  .controller('ShoppingcartCtrl',['$scope','productoService', function ($scope,productoService) {
+  .controller('ShoppingcartCtrl',['$scope','$timeout','productoService', function ($scope,$timeout,productoService) {
     productoService.listado().then(function(productos){
       // console.log(productos);
       $scope.items = productos;
@@ -66,6 +66,7 @@ angular.module('superZapatoGapApp')
     $scope.openModalVerProducto = function (item) {
       $scope.verProducto = item;
       $scope.modalVerProducto = true;
+
     };
 
     $scope.closeModalVerProducto = function () {

@@ -84,6 +84,13 @@
     <h4>Informacion del Producto</h4>
   </div>
   <div class="modal-body">
+    <div>Nombre: {{ verProducto.nombre }}</div>
+    <div>Precio: {{ verProducto.precio | currency }}</div>
+    <div>Descripcion: {{ verProducto.descripcion }}</div>
+    <div>Cantidad Inventario: {{ verProducto.cantidadInventario }}</div>
+    <div>Cantidad Estante: {{ verProducto.cantidadEstante}}</div>
+
+
     <carousel interval="slideInterval">
       <slide ng-repeat="slide in verProducto.imagenesSlide">
         <img ng-src="{{slide.path}}" style="margin:auto;">

@@ -12,7 +12,8 @@
     "angular-cookies": "~1.0.7",
     "angular-sanitize": "~1.0.7",
     "lawnchair":"0.6.3",
-    "underscore":"1.5.1"
+    "underscore":"1.5.1",
+    "masonry": "3.1.2"
   },
   "devDependencies": {
     "angular-mocks": "~1.0.7",

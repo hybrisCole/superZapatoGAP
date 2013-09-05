@@ -49,7 +49,7 @@
           <h3>{{item.precio | currency}}</h3>
           <a href="javascript:void(0)" class="small" ng-click="openModalVerProducto(item)">[+] ver detalles</a>
           <p>{{item.descripcion}}</p>
-          <input ng-model='item.quantityToAdd' type="number" min="1" max="500" placeholder="1" required>
+          <input ng-model='item.quantityToAdd' type="number" min="1" max="500" class="cantidad" placeholder="1" required>
 
         </div>
         <div class="modal-footer" style="text-align: left">

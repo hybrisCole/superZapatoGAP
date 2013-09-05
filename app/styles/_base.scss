@@ -22,10 +22,13 @@ input {
 input:required:invalid, input:focus:invalid {
     color: red;
 }
-
-
 input:required:valid {
     color: limegreen;
+}
+
+.cantidad{
+    width: 80px;
+    margin: 10px 0 0;
 }
 
 input[type="checkbox"] {

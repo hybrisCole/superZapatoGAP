@@ -2,14 +2,17 @@
 
 angular.module('superZapatoGapApp')
   .controller('ShoppingcartCtrl',['$scope','$timeout','productoService', function ($scope,$timeout,productoService) {
+    $scope.productosCargados = false;
     productoService.listado().then(function(productos){
       // console.log(productos);
       $scope.items = _.map(productos,function(producto){
         producto.quantityToAdd = 1;
         return producto;
       });
+      $scope.productosCargados = true;
     });
-    
+
+    $scope.bricks = [{src:'http://lorempixel.com/g/400/200/?9970'},{src:'http://lorempixel.com/g/400/200/?9970'},{src:'http://lorempixel.com/g/400/200/?9970'}]
 
     $scope.cart_items = [
       {title: 'Paint pots', quantity: 3, price: 3.95},

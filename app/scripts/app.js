@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('superZapatoGapApp', ['ui.bootstrap'])
+angular.module('superZapatoGapApp', ['ui.bootstrap','wu.masonry'])
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {

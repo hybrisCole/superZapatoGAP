@@ -1,6 +1,7 @@
-
-
-<div class="row">
+<div class="row" ng-show="!productosCargados">
+  Cargando...
+</div>
+<div class="row" ng-show="productosCargados">
   <div class="span4">
     <ul class="icons-nav span4">
       <li>
@@ -32,12 +33,13 @@
           </a>
         </li>
       </ul>
+     </div>
   </div>
 
 </div>
 <div class="row">
   <div masonry>
-    <div class="span4 masonry-brick" ng-repeat='item in items | filter:searchText'>
+    <div class="masonry-brick span3" ng-repeat='item in items | filter:searchText'>
       <div class="thumbnail" style="padding: 0">
         <div style="padding:4px">
           <a href="javascript:void(0)" ng-click="openModalVerProducto(item)"> <img alt="300x200" style="width: 100%" src={{item.imagenPrincipal}}></a>

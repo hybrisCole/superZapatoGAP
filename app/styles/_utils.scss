@@ -74,3 +74,11 @@
 
 
 .centered-text{text-align: center;}
+
+.masonry-brick {
+  margin: 1em;
+}
+
+.masonry-brick.loaded {
+  display: block;
+}

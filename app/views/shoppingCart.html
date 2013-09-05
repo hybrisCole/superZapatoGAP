@@ -36,8 +36,8 @@
 
 </div>
 <div class="row">
-  <ul id="thumbnails" class="">
-    <li ng-repeat='item in items | filter:searchText' class="span3">
+  <div masonry>
+    <div class="span4 masonry-brick" ng-repeat='item in items | filter:searchText'>
       <div class="thumbnail" style="padding: 0">
         <div style="padding:4px">
           <a href="javascript:void(0)" ng-click="openModalVerProducto(item)"> <img alt="300x200" style="width: 100%" src={{item.imagenPrincipal}}></a>
@@ -54,6 +54,11 @@
           <button class="btn btn-primary" ng-click="addToCart(item)">Agregar al Carrito</button>
         </div>
       </div>
+    </div>
+  </div>
+  <ul id="thumbnails" class="">
+    <li ng-repeat='item in items | filter:searchText' class="span3">
+
     </li>
   </ul>
 </div>

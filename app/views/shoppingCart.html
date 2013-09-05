@@ -1,0 +1,118 @@
+<div class="row" ng-show="!productosCargados">
+  Cargando...
+</div>
+<div class="row" ng-show="productosCargados">
+  <div class="span4">
+    <ul class="icons-nav span4">
+      <li>
+        <ul class="cart">
+          <li class="icon products-icon"></li>
+          <li class="ammount products-ammount">{{items.length;}}</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="search_form span4">
+    <form id="custom-search-form" class="form-search form-horizontal ">
+        <div class="input-append ">
+            <input type="text" class="search-query" placeholder="Search" ng-model="searchText">
+            <button type="submit" class="btn"><i class="icon-search"></i></button>
+        </div>
+    </form>
+  </div>
+  <div class="row">
+     <div class="mycart pull-right span2">
+      <ul class="icons-nav">
+        <li><a href="javascript:void(0)" ng-click="openModalVerCarrito()"><h2>[ver carrito]</h2><a/></li>
+        <li class="pull-right">
+          <a href="javascript:void(0)" ng-click="openModalVerCarrito()">
+            <ul class="cart">
+              <li class="icon cart-icon"></li>
+              <li class="ammount cart-ammount">{{cart_items.length;}}</li>
+            </ul>
+          </a>
+        </li>
+      </ul>
+     </div>
+  </div>
+
+</div>
+<div class="row">
+  <div masonry>
+    <div class="masonry-brick span3" ng-repeat='item in items | filter:searchText'>
+      <div class="thumbnail" style="padding: 0">
+        <div style="padding:4px">
+          <a href="javascript:void(0)" ng-click="openModalVerProducto(item)"> <img alt="300x200" style="width: 100%" src={{item.imagenPrincipal}}></a>
+        </div>
+        <div class="caption">
+          <h2>{{item.nombre}}</h2>
+          <h3>{{item.precio | currency}}</h3>
+          <a href="javascript:void(0)" class="small" ng-click="openModalVerProducto(item)">[+] ver detalles</a>
+          <p>{{item.descripcion}}</p>
+          <input ng-model='item.quantityToAdd' type="number" min="1" max="500" class="cantidad" placeholder="1" required>
+
+        </div>
+        <div class="modal-footer" style="text-align: left">
+          <button class="btn btn-primary" ng-click="addToCart(item)">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ul id="thumbnails" class="">
+    <li ng-repeat='item in items | filter:searchText' class="span3">
+
+    </li>
+  </ul>
+</div>
+
+<div modal="modalVerProducto" close="closeModalVerProducto()" options="modalOpts">
+  <div class="modal-header">
+    <h4>{{ verProducto.nombre }}</h4>
+    <div> <strong>Estante:</strong> {{ verProducto.cantidadEstante}}</div>
+    <div> <strong>Disponibles:</strong> {{ verProducto.cantidadInventario }}</div>
+  </div>
+  <div class="modal-body">
+    <carousel interval="slideInterval">
+      <slide ng-repeat="slide in verProducto.imagenesSlide">
+        <img ng-src="{{slide.path}}" style="margin:auto;">
+      </slide>
+    </carousel>
+    <div> <strong>Precio:</strong> {{ verProducto.precio | currency }}</div>
+    <div> <strong>Descripci&#243;n:</strong> {{ verProducto.descripcion }}</div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-warning cancel" ng-click="closeModalVerProducto()">Cerrar</button>
+  </div>
+</div>
+
+<div modal="modalVerCarrito" close="closeModalVerCarrito()" options="modalOpts">
+  <div class="modal-header">
+    <h4>Mis Compras</h4>
+  </div>
+  <div class="modal-body">
+    <div class="border-top my-cart">
+      <ul id="cart-list border-top">
+        <li ng-repeat='cart_item in cart_items'>
+          <ul class="in-line">
+            <li class="pd_cart_name">
+              <button ng-click="removeFromCart($index)" class="button btn-delete"></button>
+              <span>{{cart_item.title}}</span></li>
+            <li class="pd_cart_qty">
+              {{cart_item.quantity}}
+            </li>
+            <li>
+              <span>{{cart_item.price | currency}}</span>
+            </li>
+            <li class="pd_cart_price">
+              <span>{{cart_item.price * cart_item.quantity | currency}}</span>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <h3 class="border-top">Total: <span class="orange">{{cartTotal() | currency}}</span></h3>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-warning cancel" ng-click="closeModalVerCarrito()">Cerrar</button>
+  </div>
+</div>

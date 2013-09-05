@@ -15,11 +15,6 @@ angular.module('superZapatoGapApp')
     $scope.bricks = [{src:'http://lorempixel.com/g/400/200/?9970'},{src:'http://lorempixel.com/g/400/200/?9970'},{src:'http://lorempixel.com/g/400/200/?9970'}]
 
     $scope.cart_items = [
-      {title: 'Paint pots', quantity: 3, price: 3.95},
-      {title: 'Polka dots', quantity: 8, price: 12.95},
-      {title: 'Paint pots', quantity: 3, price: 3.95},
-      {title: 'Polka dots', quantity: 1, price: 12.95},
-      {title: 'Pebbles', quantity: 6, price: 6.95}
     ];
 
     $scope.remove = function(index) {

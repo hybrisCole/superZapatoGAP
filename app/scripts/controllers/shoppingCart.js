@@ -4,8 +4,11 @@ angular.module('superZapatoGapApp')
   .controller('ShoppingcartCtrl',['$scope','$timeout','productoService', function ($scope,$timeout,productoService) {
     productoService.listado().then(function(productos){
       // console.log(productos);
-      $scope.items = productos;
-    })
+      $scope.items = _.map(productos,function(producto){
+        producto.quantityToAdd = 1;
+        return producto;
+      });
+    });
     
 
     $scope.cart_items = [
@@ -32,7 +35,7 @@ angular.module('superZapatoGapApp')
     };
 
     $scope.addToCart = function(item) {
-      $scope.cart_items.push({title: item.nombre , quantity: item.quantity ,price: item.precio});
+      $scope.cart_items.push({title: item.nombre , quantity: item.quantityToAdd ,price: item.precio});
     };
 
     $scope.myfilter = function() {
